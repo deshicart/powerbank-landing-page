@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20000mAh সুপার ফাস্ট চার্জ পাওয়ার ব্যাংক</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        
+        body {
+            background-color: #f1f8f1;
+            color: #1a3c2d;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .cta-button {
+            background-color: #388e3c;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #2e7d32;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(56, 142, 60, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://i.ibb.co/FkjFC51b/IMG-20250902-WA0001.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #2d3436;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #2e7d32;
+        }
+        
+        .product-image {
+            max-width: 350px;
+            margin: 30px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: #2d3436;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: #e8f5e9;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #2e7d32;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2d3436;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: #e8f5e9;
+        }
+        
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mySlides {
+            display: none;
+            animation: fade 1.5s ease-in-out;
+        }
+        
+        @keyframes fade {
+            from {opacity: 0.4;}
+            to {opacity: 1;}
+        }
+        
+        .mySlides img {
+            width: 100%;
+            vertical-align: middle;
+            height: 450px;
+            object-fit: cover;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .testimonial-slideshow {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-slide {
+            display: none;
+            animation: fade 1.5s ease-in-out;
+        }
+        
+        .testimonial-slide img {
+            width: 100%;
+            vertical-align: middle;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="40" fill="white"/></svg>');
+            background-size: 200px;
+            opacity: 0.1;
+        }
+        
+        .pricing .section-title {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pricing-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .price-tag {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0;
+            display: inline-block;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #F4320B;
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+        
+        .discount-badge {
+            background: linear-gradient(135deg, #ff5252 0%, #ff7675 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .price-features {
+            list-style: none;
+            margin: 25px 0;
+            padding: 0;
+            text-align: left;
+            max-width: 500px;
+            margin: 25px auto;
+        }
+        
+        .price-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .price-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #c8e6c9;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .stock-info {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .pricing-cta {
+            margin-top: 30px;
+        }
+        
+        /* Order Form Section */
+        .order-form {
+            padding: 80px 0;
+            background-color: #e8f5e9;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d3436;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2e7d32;
+            box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            margin-top: 10px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #4caf50;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #636e72;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            animation: modalopen 0.5s;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-60px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .feature-card, .testimonial-card {
+                padding: 20px;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+            
+            .mySlides img {
+                height: 300px;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
+            
+            .price-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .pricing-content {
+                padding: 25px;
+            }
+            
+            .price-tag {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Deshi Cart</div>
+            <a href="#order" class="cta-button">অর্ডার করুন</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>20000mAh সুপার ফাস্ট চার্জিং পাওয়ার ব্যাংক</h1>
+            <p>ভ্রমণে কিংবা দৈনন্দিন ব্যবহারে আর চার্জ শেষ নিয়ে দুশ্চিন্তা নয়! 🛫📱</p>
+            <div class="product-image">
+                <img src="https://i.ibb.co/FkjFC51b/IMG-20250902-WA0001.jpg" alt="20000mAh Power Bank">
+            </div>
+            <a href="#order" class="cta-button">এখনই অর্ডার করুন</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">অসাধারণ বৈশিষ্ট্যসমূহ</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h3>বৃহৎ 20000mAh ক্যাপাসিটি</h3>
+                    <p>বারবার চার্জের ঝামেলা ছাড়াই একাধিক ডিভাইস চার্জ করুন</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>22.5W সুপার ফাস্ট চার্জিং</h3>
+                    <p>দীর্ঘ সময় অপেক্ষার বিদায়, মুহূর্তেই পাওয়ার আপ!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>ডিজিটাল ডিসপ্লে</h3>
+                    <p>ব্যাটারির চার্জ লেভেল এক নজরেই দেখুন</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>মাল্টি পোর্ট সাপোর্ট</h3>
+                    <p>টাইপ-সি, অ্যাপল ইন্টারফেস ও ডুয়াল ইউএসবি</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-weight-hanging"></i>
+                    </div>
+                    <h3>হালকা ও কমপ্যাক্ট ডিজাইন</h3>
+                    <p>সহজে বহনযোগ্য, ভ্রমণ ও দৈনন্দিন ব্যবহারের জন্য পারফেক্ট</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>স্টাইলিশ ট্রান্সপারেন্ট ডিজাইন</h3>
+                    <p>আধুনিক এবং আকর্ষণীয় ডিজাইন</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">প্রোডাক্ট গ্যালারি</h2>
+            
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="https://i.ibb.co/FkjFC51b/IMG-20250902-WA0001.jpg" alt="Power Bank Image 1">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="https://i.ibb.co/m51R3BqM/2-ac294282-962a-4567-b2d3-f4832c67f404-progressive.jpg" alt="Power Bank Image 2">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="https://i.ibb.co/qFCtCFKL/1-cd7ed258-37ea-4abd-bbdc-06d1d9c7a140-progressive.jpg" alt="Power Bank Image 3">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="https://i.ibb.co/7dQrPrNb/2360102f69524423a68ae19eb511e5bb-jpg-720x720q80-jpg.webp" alt="Power Bank Image 4">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="https://i.ibb.co/FbJQcbW3/82e6e0e8528cbc237fcaf2fe10c89af2-jpg-720x720q80-jpg.webp" alt="Power Bank Image 5">
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="features" style="background-color: #e8f5e9;">
+        <div class="container">
+            <h2 class="section-title">প্রোডাক্ট ভিডিও</h2>
+            <div style="text-align: center; margin-top: 40px;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 800px; margin: 0 auto;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" src="https://www.youtube.com/embed/yKzfr8aW2eQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">গ্রাহকদের মন্তব্য</h2>
+            
+            <div class="testimonial-slideshow">
+                <div class="testimonial-slide fade">
+                    <img src="https://i.ibb.co/srY75Bz/IMG-20250902-WA0006.jpg" alt="Customer Review 1">
+                </div>
+                
+                <div class="testimonial-slide fade">
+                    <img src="https://i.ibb.co/FLV54pnD/IMG-20250902-WA0005.jpg" alt="Customer Review 2">
+                </div>
+                
+                <div class="testimonial-slide fade">
+                    <img src="https://i.ibb.co/dXg5SnG/IMG-20250902-WA0004.jpg" alt="Customer Review 3">
+                </div>
+                
+                <div class="testimonial-slide fade">
+                    <img src="https://i.ibb.co/C5ShZ7LB/IMG-20250902-WA0003.jpg" alt="Customer Review 4">
+                </div>
+                
+                <div class="testimonial-slide fade">
+                    <img src="https://i.ibb.co/k6WZsjB5/IMG-20250902-WA0002.jpg" alt="Customer Review 5">
+                </div>
+                
+                <a class="prev" onclick="plusTestimonialSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusTestimonialSlides(1)">&#10095;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">বিশেষ মূল্য</h2>
+            <div class="pricing-content">
+                <div class="price-container">
+                    <span class="original-price">২৫০০ টাকা</span>
+                    <span class="price-tag">১৫০০ টাকা</span>
+                    <span class="discount-badge">৪০% ছাড়</span>
+                </div>
+                
+                <ul class="price-features">
+                    <li>২০০০০ এমএএইচ বিশাল ক্যাপাসিটি</li>
+                    <li>২২.৫ ওয়াট সুপার ফাস্ট চার্জিং</li>
+                    <li>মাল্টি পোর্ট সাপোর্ট (টাইপ-সি, ইউএসবি, মাইক্রো ইউএসবি)</li>
+                    <li>ডিজিটাল ডিসপ্লে ও ট্রান্সপারেন্ট ডিজাইন</li>
+                </ul>
+                
+                <p class="stock-info">🚨 স্টক সীমিত: মাত্র ৪৯ পিস পাওয়ার ব্যাংক available</p>
+                
+                <div class="pricing-cta">
+                    <a href="#order" class="cta-button">এখনই অর্ডার করুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="order-form" id="order">
+        <div class="container">
+            <h2 class="section-title">অর্ডার ফর্ম</h2>
+            <div class="form-container">
+                <form id="powerbank-order-form" action="https://formspree.io/f/mblaaggp" method="POST">
+                    <div class="form-group">
+                        <label for="name">পুরো নাম</label>
+                        <input type="text" id="name" name="name" required placeholder="আপনার পুরো নাম লিখুন">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">সম্পূর্ণ ঠিকানা</label>
+                        <textarea id="address" name="address" rows="3" required placeholder="বাড়ি নং, রোড নং, এলাকা, জেলা"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">মোবাইল নম্বর</label>
+                        <input type="tel" id="mobile" name="mobile" required placeholder="01XXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">ইমেইল এড্রেস</label>
+                        <input type="email" id="email" name="email" placeholder="আপনার ইমেইল এড্রেস">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">পরিমাণ</label>
+                        <select id="quantity" name="quantity">
+                            <option value="1">1 পিস</option>
+                            <option value="2">2 পিস</option>
+                            <option value="3">3 পিস</option>
+                            <option value="4">4 পিস</option>
+                            <option value="5">5 পিস</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">অর্ডার নিশ্চিত করুন</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Deshi Cart</h3>
+                    <p>আমরা মানসম্মত ইলেকট্রনিক্স পণ্য সাশ্রয়ী মূল্যে সরবরাহ করে থাকি</p>
+                </div>
+                <div class="footer-section">
+                    <h3>যোগাযোগ</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Sreepur Bazar, Rajbari, Dhaka, Bangladesh</li>
+                        <li><i class="fas fa-phone"></i> 01580-383544
+                        <li><i class="fas fa-envelope"></i> mdshafinashrafin753@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>অনুসরণ করুন</h3>
+                    <p>আমাদের সামাজিক মিডিয়াতে যুক্ত থাকুন</p>
+                    <div style="margin-top: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Deshi Cart </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Confirmation Modal -->
+    <div id="orderModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="color: #2e7d32; margin-bottom: 20px;">অর্ডার করার জন্য ধন্যবাদ!</h2>
+            <p style="font-size: 18px; margin-bottom: 20px;">আমাদের একজন প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবে অর্ডার নিশ্চিত করার জন্য।</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Success" style="width: 80px; height: 80px; margin: 0 auto 20px; display: block;">
+            <button class="cta-button" style="margin: 0 auto;" id="modalCloseBtn">ঠিক আছে</button>
+        </div>
+    </div>
+
+    <script>
+        // Slideshow for product images
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+        
+        // Auto slide every 5 seconds
+        setInterval(function() {
+            plusSlides(1);
+        }, 5000);
+        
+        // Slideshow for testimonials
+        let testimonialSlideIndex = 1;
+        showTestimonialSlides(testimonialSlideIndex);
+        
+        function plusTestimonialSlides(n) {
+            showTestimonialSlides(testimonialSlideIndex += n);
+        }
+        
+        function showTestimonialSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("testimonial-slide");
+            if (n > slides.length) {testimonialSlideIndex = 1}
+            if (n < 1) {testimonialSlideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[testimonialSlideIndex-1].style.display = "block";
+        }
+        
+        // Auto slide testimonials every 7 seconds
+        setInterval(function() {
+            plusTestimonialSlides(1);
+        }, 7000);
+        
+        // Modal functionality
+        const modal = document.getElementById("orderModal");
+        const span = document.getElementsByClassName("close")[0];
+        const modalCloseBtn = document.getElementById("modalCloseBtn");
+        
+        // Close modal when X is clicked
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Close modal when close button is clicked
+        modalCloseBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Close modal when clicking outside the modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // Form submission
+        document.getElementById('powerbank-order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const mobile = document.getElementById('mobile').value;
+            
+            if (!name || !address || !mobile) {
+                alert('দয়া করে সকল প্রয়োজনীয় তথ্য প্রদান করুন');
+                return;
+            }
+            
+            // Submit the form using Formspree
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success modal
+                    modal.style.display = "flex";
+                    form.reset();
+                } else {
+                    alert('ফর্ম জমা দেওয়ার সময় একটি ত্রুটিoccurred। পরে আবার চেষ্টা করুন।');
+                }
+            })
+            .catch(error => {
+                alert('ফর্ম জমা দেওয়ার সময় একটি ত্রুটিoccurred। পরে আবার চেষ্টা করুন।');
+            });
+        });
+    </script>
+</body>
+</html>
