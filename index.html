@@ -309,7 +309,7 @@
         
         .original-price {
             text-decoration: line-through;
-            color: #F4320B;
+            color: red;
             font-size: 1.8rem;
             margin-right: 15px;
         }
@@ -421,6 +421,45 @@
             box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
         }
         
+        .delivery-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .delivery-option {
+            flex: 1;
+            min-width: 200px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .delivery-option:hover {
+            border-color: #4caf50;
+        }
+        
+        .delivery-option.selected {
+            border-color: #4caf50;
+            background-color: #e8f5e9;
+        }
+        
+        .delivery-option input {
+            margin-right: 10px;
+        }
+        
+        .delivery-notice {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
         .submit-btn {
             background: linear-gradient(to right, #2e7d32, #4caf50);
             color: white;
@@ -437,6 +476,15 @@
         .submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(46, 125, 50, 0.4);
+        }
+        
+        .notice-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: 4px;
+            font-size: 0.9rem;
         }
         
         /* Footer */
@@ -466,6 +514,7 @@
             height: 3px;
             background: linear-gradient(to right, #2e7d32, #4caf50);
             margin-top: 10px;
+            border-radius: 2px;
         }
         
         .contact-info {
@@ -569,6 +618,10 @@
             .price-tag {
                 font-size: 2.8rem;
             }
+            
+            .delivery-options {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -587,7 +640,7 @@
             <h1>20000mAh সুপার ফাস্ট চার্জিং পাওয়ার ব্যাংক</h1>
             <p>ভ্রমণে কিংবা দৈনন্দিন ব্যবহারে আর চার্জ শেষ নিয়ে দুশ্চিন্তা নয়! 🛫📱</p>
             <div class="product-image">
-                <img src="https://i.ibb.co/FkjFC51b/IMG-20250902-WA0001.jpg" alt="20000mAh Power Bank">
+                <img src="https://i.ibb.co/dsZ3QrcW/sjt-K128-Yn-GTvcg-Eu-KHzs-AVotp-Wj-JX2-Niq-Yyto-Vmn.png" alt="20000mAh Power Bank">
             </div>
             <a href="#order" class="cta-button">এখনই অর্ডার করুন</a>
         </div>
@@ -624,7 +677,7 @@
                         <i class="fas fa-plug"></i>
                     </div>
                     <h3>মাল্টি পোর্ট সাপোর্ট</h3>
-                    <p>টাইপ-সি, অ্যাপল ইন্টারফেস ও ডুয়াল ইউএসবি</p>
+                    <p>টাইপ-সি ও ডুয়াল ইউএসবি</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -651,7 +704,7 @@
             
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img src="https://i.ibb.co/FkjFC51b/IMG-20250902-WA0001.jpg" alt="Power Bank Image 1">
+                    <img src="https://i.ibb.co/Y4kxbbb3/a285eaec196d2cbd9a2389f42ef40f1a-jpg-720x720q80-jpg.webp" alt="Power Bank Image 1">
                 </div>
                 
                 <div class="mySlides fade">
@@ -682,7 +735,7 @@
             <h2 class="section-title">প্রোডাক্ট ভিডিও</h2>
             <div style="text-align: center; margin-top: 40px;">
                 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 800px; margin: 0 auto;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" src="https://www.youtube.com/embed/yKzfr8aW2eQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" src="https://www.youtube.com/embed/rvi7C1Pf7FU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -695,23 +748,23 @@
             
             <div class="testimonial-slideshow">
                 <div class="testimonial-slide fade">
-                    <img src="https://i.ibb.co/srY75Bz/IMG-20250902-WA0006.jpg" alt="Customer Review 1">
+                    <img src="https://i.ibb.co/HfWSM9Dh/20250910-114653.png" alt="Customer Review 1">
                 </div>
                 
                 <div class="testimonial-slide fade">
-                    <img src="https://i.ibb.co/FLV54pnD/IMG-20250902-WA0005.jpg" alt="Customer Review 2">
+                    <img src="https://i.ibb.co/HfWSM9Dh/20250910-114653.png" alt="Customer Review 2">
                 </div>
                 
                 <div class="testimonial-slide fade">
-                    <img src="https://i.ibb.co/dXg5SnG/IMG-20250902-WA0004.jpg" alt="Customer Review 3">
+                    <img src="https://i.ibb.co/HfWSM9Dh/20250910-114653.png" alt="Customer Review 3">
                 </div>
                 
                 <div class="testimonial-slide fade">
-                    <img src="https://i.ibb.co/C5ShZ7LB/IMG-20250902-WA0003.jpg" alt="Customer Review 4">
+                    <img src="https://i.ibb.co/HfWSM9Dh/20250910-114653.png" alt="Customer Review 4">
                 </div>
                 
                 <div class="testimonial-slide fade">
-                    <img src="https://i.ibb.co/k6WZsjB5/IMG-20250902-WA0002.jpg" alt="Customer Review 5">
+                    <img src="https://i.ibb.co/HfWSM9Dh/20250910-114653.png" alt="Customer Review 5">
                 </div>
                 
                 <a class="prev" onclick="plusTestimonialSlides(-1)">&#10094;</a>
@@ -734,7 +787,7 @@
                 <ul class="price-features">
                     <li>২০০০০ এমএএইচ বিশাল ক্যাপাসিটি</li>
                     <li>২২.৫ ওয়াট সুপার ফাস্ট চার্জিং</li>
-                    <li>মাল্টি পোর্ট সাপোর্ট (টাইপ-সি, ইউএসবি, মাইক্রো ইউএসবি)</li>
+                    <li>মাল্টি পোর্ট সাপোর্ট (টাইপ-সি ও ইউএসবি)</li>
                     <li>ডিজিটাল ডিসপ্লে ও ট্রান্সপারেন্ট ডিজাইন</li>
                 </ul>
                 
@@ -762,7 +815,7 @@
                         <textarea id="address" name="address" rows="3" required placeholder="বাড়ি নং, রোড নং, এলাকা, জেলা"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="mobile">মোবাইল নম্বর</label>
+                        <label for="mobile">আপনার Whatsapp নম্বর</label>
                         <input type="tel" id="mobile" name="mobile" required placeholder="01XXXXXXXXX">
                     </div>
                     <div class="form-group">
@@ -779,7 +832,32 @@
                             <option value="5">5 পিস</option>
                         </select>
                     </div>
+                    
+                    <div class="form-group">
+                        <label>ডেলিভারি চার্জ নির্বাচন করুন</label>
+                        <div class="delivery-options">
+                            <div class="delivery-option" onclick="selectDeliveryOption('inside_dhaka')">
+                                <input type="radio" id="inside_dhaka" name="delivery_charge" value="70" required>
+                                <label for="inside_dhaka">ঢাকার ভিতরে - 70 টাকা</label>
+                            </div>
+                            <div class="delivery-option" onclick="selectDeliveryOption('outside_dhaka')">
+                                <input type="radio" id="outside_dhaka" name="delivery_charge" value="120">
+                                <label for="outside_dhaka">ঢাকার বাহিরে - 120 টাকা</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="delivery-notice">
+                        <p><strong>ডেলিভারি পদ্ধতি:</strong> প্রোডাক্টটি আপনাকে ক্যাশ অন ডেলিভারিতে পাঠানো হবে। ডেলিভারি চার্জ অর্ডার কনফার্মেশনের সময় প্রদান করতে হবে।</p>
+                    </div>
+                    
                     <button type="submit" class="submit-btn">অর্ডার নিশ্চিত করুন</button>
+                    
+                    <div class="notice-box">
+                        <p><strong>নোটিশ:</strong> এই প্রোডাক্ট আমাদের নিজস্ব গুদামে মজুদ করা নেই। 
+                        আপনার অর্ডার কনফার্ম হওয়ার পর আমরা আমাদের সাপ্লায়ার থেকে আপনার নামে অর্ডার প্রসেস করি 
+                        এবং সরাসরি কুরিয়ার সার্ভিসের মাধ্যমে আপনার ঠিকানায় পাঠানো হয়।</p>
+                    </div>
                 </form>
             </div>
         </div>
@@ -797,7 +875,7 @@
                     <h3>যোগাযোগ</h3>
                     <ul class="contact-info">
                         <li><i class="fas fa-map-marker-alt"></i> Sreepur Bazar, Rajbari, Dhaka, Bangladesh</li>
-                        <li><i class="fas fa-phone"></i> 01580-383544
+                        <li><i class="fas fa-phone"></i> 01580-383544</li>
                         <li><i class="fas fa-envelope"></i> mdshafinashrafin753@gmail.com</li>
                     </ul>
                 </div>
@@ -877,6 +955,20 @@
             plusTestimonialSlides(1);
         }, 7000);
         
+        // Delivery option selection
+        function selectDeliveryOption(id) {
+            document.getElementById(id).checked = true;
+            
+            // Remove selected class from all options
+            const options = document.querySelectorAll('.delivery-option');
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            document.querySelector(`[for="${id}"]`).closest('.delivery-option').classList.add('selected');
+        }
+        
         // Modal functionality
         const modal = document.getElementById("orderModal");
         const span = document.getElementsByClassName("close")[0];
@@ -907,8 +999,9 @@
             const name = document.getElementById('name').value;
             const address = document.getElementById('address').value;
             const mobile = document.getElementById('mobile').value;
+            const deliveryCharge = document.querySelector('input[name="delivery_charge"]:checked');
             
-            if (!name || !address || !mobile) {
+            if (!name || !address || !mobile || !deliveryCharge) {
                 alert('দয়া করে সকল প্রয়োজনীয় তথ্য প্রদান করুন');
                 return;
             }
@@ -929,12 +1022,18 @@
                     // Show success modal
                     modal.style.display = "flex";
                     form.reset();
+                    
+                    // Reset delivery option styling
+                    const options = document.querySelectorAll('.delivery-option');
+                    options.forEach(option => {
+                        option.classList.remove('selected');
+                    });
                 } else {
-                    alert('ফর্ম জমা দেওয়ার সময় একটি ত্রুটিoccurred। পরে আবার চেষ্টা করুন।');
+                    alert('ফর্ম জমা দেওয়ার সময় একটি ত্রুটি ধরা পরেছে আবার চেষ্টা করুন।');
                 }
             })
             .catch(error => {
-                alert('ফর্ম জমা দেওয়ার সময় একটি ত্রুটিoccurred। পরে আবার চেষ্টা করুন।');
+                alert('ফর্ম জমা দেওয়ার সময় একটি ত্রুটি ধরা পরেছে আবার চেষ্টা করুন।');
             });
         });
     </script>
